@@ -79,16 +79,16 @@ wss.on('connection', function connection(ws) {
     });
 
     ws.on('close', function disconnect() {
-        ws.sendToAll({ t: "watch.stop", id: ws.id });
-
         connections.delete(ws.id);
 
         broadcasting.delete(ws);
+
+        ws.sendToAll({ t: "watcher.remove", id: ws.id });
     });
 });
 
 app.use(express.static(path.join(__dirname, 'public')))
 
-server.listen( process.env.PORT || 8080, function () {
+server.listen(process.env.PORT || 8080, function () {
     console.log('Listening on http://localhost:8080');
 });
