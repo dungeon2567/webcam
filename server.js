@@ -78,7 +78,7 @@ wss.on('connection', function connection(ws) {
         }
     });
 
-    ws.on('disconnect', function disconnect() {
+    ws.on('close', function disconnect() {
         ws.sendToAll({ t: "watch.stop", id: ws.id });
 
         connections.delete(ws.id);
