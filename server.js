@@ -89,6 +89,6 @@ wss.on('connection', function connection(ws) {
 
 app.use(express.static(path.join(__dirname, 'public')))
 
-server.listen(8080, function () {
+server.listen( process.env.PORT || 8080, function () {
     console.log('Listening on http://localhost:8080');
 });
