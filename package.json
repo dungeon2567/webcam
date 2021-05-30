@@ -6,7 +6,7 @@
   "dependencies": {
     "cuid": "^2.1.8",
     "express": "^4.17.1",
-    "ws": "^7.2.3"
+    "ws": "^7.4.6"
   },
   "devDependencies": {},
   "scripts": {
